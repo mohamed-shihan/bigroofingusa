@@ -1,0 +1,535 @@
+═══════════════════════════════════════════════════════════════════
+  BIG ROOFING USA — WEBSITE EDITING GUIDE
+  Plain English. No coding knowledge needed.
+═══════════════════════════════════════════════════════════════════
+
+HOW TO OPEN AND EDIT THE FILE
+──────────────────────────────
+1. Open the file "big-roofing-usa.html" in any text editor.
+   - On Windows: Right-click the file → "Open with" → "Notepad"
+     (or download Notepad++ from notepad-plus-plus.org for easier editing)
+   - On Mac: Right-click → "Open with" → "TextEdit"
+     (in TextEdit, go to Format → Make Plain Text first)
+
+2. To preview your changes, open the HTML file in any web browser
+   (Chrome, Firefox, Safari, Edge). Just double-click it.
+
+3. Every time you make a change and save the file, refresh the
+   browser to see the result.
+
+IMPORTANT: All editable content is in the CONFIG section near
+the top of the file. You will see this comment:
+
+   // CONFIG — EDIT EVERYTHING HERE. NOTHING ELSE NEEDS TO CHANGE.
+
+Everything between { ... } after "const CONFIG =" is what you edit.
+DO NOT touch anything below the comment that says:
+   // JAVASCRIPT — DO NOT EDIT BELOW THIS LINE
+
+═══════════════════════════════════════════════════════════════════
+  1. COMPANY NAME, PHONE, EMAIL, ADDRESS
+═══════════════════════════════════════════════════════════════════
+
+Find these lines (near the top of CONFIG):
+
+   companyName:     "Big Roofing USA LLC",
+   tagline:         "Your Roof. Your Family. Our Responsibility.",
+   phone:           "(800) 555-0190",
+   phoneHref:       "tel:+18005550190",
+   email:           "hello@bigroofingusa.com",
+   emailHref:       "mailto:hello@bigroofingusa.com",
+   address:         "123 Main Street, Houston, TX 77001",
+   licenseNumber:   "TX-ROF-2024-00892",
+   yearsInBusiness: "12",
+   projectsDone:    "2,400+",
+   statesServed:    "TX, FL, GA, NC",
+
+HOW TO CHANGE:
+- Replace the text BETWEEN the quotation marks.
+- Keep the quotation marks. Do not delete commas at the end of lines.
+
+EXAMPLE — Changing the phone number:
+  BEFORE:  phone:  "(800) 555-0190",
+  AFTER:   phone:  "(713) 456-7890",
+
+PHONE HREF FORMAT:
+  phoneHref must be in this format: "tel:+1XXXXXXXXXX"
+  Example: For (713) 456-7890, write:  "tel:+17134567890"
+  (No spaces, dashes, or parentheses in the href version)
+
+EMAIL HREF FORMAT:
+  emailHref must be:  "mailto:youremail@domain.com"
+
+═══════════════════════════════════════════════════════════════════
+  2. LOGO
+═══════════════════════════════════════════════════════════════════
+
+Find this line:
+
+   logoImageUrl: "",
+
+HOW TO ADD YOUR LOGO:
+Option A — Use a web URL (image already online):
+  logoImageUrl: "https://yourwebsite.com/logo.png",
+
+Option B — Use a local file (put logo in same folder as HTML file):
+  logoImageUrl: "logo.png",
+  (name it exactly as you type it — case-sensitive)
+
+If logoImageUrl stays empty (""), the website shows your company
+name as text instead. That's fine and looks clean.
+
+LOGO SIZE RECOMMENDATION: PNG or SVG, height around 80–120px,
+transparent background.
+
+═══════════════════════════════════════════════════════════════════
+  3. COLORS
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   colors: {
+     primary:   "#3C444C",
+     secondary: "#8F9C4E",
+     accent:    "#D4742A",
+     bg:        "#FAF8F5",
+     bgAlt:     "#F0EDE8",
+     text:      "#1E2328",
+     textLight: "#5A6270",
+     border:    "#DDD9D2",
+   },
+
+WHAT EACH COLOR DOES:
+  primary   = Main dark color (nav background, footer, headings)
+  secondary = Green accent (service icons, badges, highlights)
+  accent    = Orange/amber (all buttons and CTAs — most important)
+  bg        = Page background (warm white)
+  bgAlt     = Alternate section background (slightly darker)
+  text      = Main body text color
+  textLight = Lighter text for descriptions
+  border    = Card and input borders
+
+HOW TO CHANGE:
+Replace the hex code (e.g. "#3C444C") with any color you want.
+
+WHERE TO FIND HEX CODES:
+  - Go to: htmlcolorcodes.com or google.com/search?q=color+picker
+  - Pick your color, copy the # code (like #2B5BA1)
+  - Paste it in, keeping the quotes.
+
+EXAMPLE — Make buttons red:
+  BEFORE:  accent:  "#D4742A",
+  AFTER:   accent:  "#CC2200",
+
+═══════════════════════════════════════════════════════════════════
+  4. HERO SECTION (the big top section)
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   hero: {
+     headline:    "When Your Roof Fails, Your Family Feels It.",
+     subheadline: "We show up, we fix it right...",
+     ctaPrimary:  "Get a Free Roof Inspection",
+     ctaSecondary:"See Our Work",
+     heroImage:   "https://images.unsplash.com/...",
+     emergencyBadge: "24/7 Emergency Repairs Available",
+   },
+
+WHAT EACH LINE DOES:
+  headline      = Big bold text at the top
+  subheadline   = Smaller paragraph below the headline
+  ctaPrimary    = Text on the orange button
+  ctaSecondary  = Text on the white button
+  heroImage     = Background photo URL
+  emergencyBadge= Small highlighted text above the headline
+
+HOW TO CHANGE THE HERO IMAGE:
+Option A — Use any image from the web:
+  1. Find a photo online (unsplash.com has free professional photos)
+  2. Right-click → "Copy image address"
+  3. Paste it in: heroImage: "PASTE-URL-HERE",
+
+Option B — Use your own photo:
+  1. Put the photo in the same folder as your HTML file
+  2. Change to: heroImage: "your-photo.jpg",
+
+RECOMMENDED HERO IMAGE: Wide landscape photo (at least 1600px wide),
+showing a completed roof, crew at work, or a neighborhood.
+
+═══════════════════════════════════════════════════════════════════
+  5. SERVICES (the 6 service cards)
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   services: [
+     {
+       icon:  "home",
+       title: "Roof Replacement",
+       desc:  "Full tear-off and re-roof...",
+       cta:   "Learn About Replacement",
+     },
+     ...
+   ],
+
+Each { ... } block is one service card.
+
+TO CHANGE A SERVICE:
+  - title = The service name (bold heading on card)
+  - desc  = The short description paragraph
+  - cta   = The link text at the bottom of the card
+
+TO ADD A NEW SERVICE:
+  Copy one whole block including the { } and comma, paste it after
+  the last one (before the closing ]), and change the text.
+
+TO REMOVE A SERVICE:
+  Delete an entire { ... }, block (including the trailing comma).
+  Make sure you don't leave an extra comma after the last item.
+
+AVAILABLE ICONS (type these exactly in the icon field):
+  "home"            - house shape
+  "tool"            - wrench
+  "cloud-lightning" - storm cloud
+  "alert-triangle"  - warning triangle
+  "clipboard"       - clipboard
+  "building"        - office building
+
+═══════════════════════════════════════════════════════════════════
+  6. HOW-IT-WORKS STEPS (the 5 process steps)
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   process: [
+     { num:"01", title:"Free Inspection",   desc:"We come out..." },
+     ...
+   ],
+
+Each { } is one step. Change title and desc freely.
+num is the display number (01, 02, 03...).
+
+TO ADD A STEP: Copy one line and paste it, update the num.
+TO REMOVE A STEP: Delete the whole { ... }, line.
+
+═══════════════════════════════════════════════════════════════════
+  7. REVIEWS / TESTIMONIALS
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   reviews: [
+     {
+       name:  "Sandra K., Houston TX",
+       stars: 5,
+       text:  "After the hail storm...",
+       photo: "",
+     },
+     ...
+   ],
+
+FIELDS:
+  name  = Customer name and city shown below the review
+  stars = Rating out of 5 (use a number: 5, 4, etc.)
+  text  = The review text (what the customer said)
+  photo = URL to customer photo, or leave "" for initials
+
+TO ADD A REVIEW:
+  Copy one block { ... }, and paste after the last one (before ]).
+  Change the name, stars, and text.
+
+TO REMOVE A REVIEW:
+  Delete the whole { ... }, block.
+
+TO ADD A PHOTO for a reviewer:
+  photo: "https://link-to-photo.jpg",
+  (Photo should be square, at least 80x80px)
+
+═══════════════════════════════════════════════════════════════════
+  8. FREQUENTLY ASKED QUESTIONS
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   faqs: [
+     {
+       q: "How do I know if my roof has storm damage?",
+       a: "You don't always see it from the ground...",
+     },
+     ...
+   ],
+
+Each { q: "...", a: "..." } is one question.
+  q = The question
+  a = The answer
+
+TO ADD A QUESTION: Copy a block and paste it, change q and a.
+TO REMOVE A QUESTION: Delete the whole { ... }, block.
+
+═══════════════════════════════════════════════════════════════════
+  9. BEFORE & AFTER GALLERY
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   gallery: [
+     {
+       before: "https://images.unsplash.com/...",
+       after:  "https://images.unsplash.com/...",
+       label:  "Storm Damage Replacement — Houston TX",
+     },
+     ...
+   ],
+
+FIELDS:
+  before = URL of the "before" photo (damaged roof)
+  after  = URL of the "after" photo (finished roof)
+  label  = Caption shown below the image pair
+
+TO USE YOUR OWN PHOTOS:
+  1. Put photos in the same folder as the HTML file.
+  2. Change the URLs to just the filename:
+     before: "project1-before.jpg",
+     after:  "project1-after.jpg",
+
+PHOTO RECOMMENDATIONS:
+  - Use consistent angles where possible (before and after from
+    the same position)
+  - At least 600px wide
+  - JPG or WebP format for best performance
+
+═══════════════════════════════════════════════════════════════════
+  10. ABOUT SECTION (your story)
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   about: {
+     headline: "Started with one crew...",
+     body: [
+       "I started Big Roofing USA...",
+       "So in 2012...",
+       "We've grown since then...",
+       "Your home is the most important...",
+     ],
+     ownerName:  "Mike Hargrove",
+     ownerTitle: "Founder & Owner",
+     ownerPhoto: "",
+   },
+
+FIELDS:
+  headline   = Big heading for the about section
+  body       = Array of paragraphs (each in quotes, separated by commas)
+  ownerName  = Your name (shown with signature)
+  ownerTitle = Your title
+  ownerPhoto = URL to your photo, or "" to show your initial
+
+TO ADD/REMOVE PARAGRAPHS in body:
+  Each paragraph is a "string like this",
+  Add more between the [ ] brackets, separated by commas.
+  Remove any line to shorten.
+
+TO ADD YOUR PHOTO:
+  Put your photo in the same folder.
+  ownerPhoto: "mike-photo.jpg",
+
+═══════════════════════════════════════════════════════════════════
+  11. FINANCING OPTIONS
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   financing: {
+     headline:   "Don't let the price stop you...",
+     subline:    "Flexible payment plans...",
+     options: [
+       { label:"Monthly payments",    value:"from $99/mo" },
+       { label:"0% intro financing",  value:"12 months"   },
+       { label:"Approval time",       value:"Under 5 minutes" },
+       { label:"Credit range",        value:"All credit types" },
+     ],
+     cta: "Check My Financing Options",
+     disclaimer: "Financing provided through...",
+   },
+
+Change any label or value freely.
+Change cta to update the button text.
+Change disclaimer to your actual financing disclaimer text.
+
+═══════════════════════════════════════════════════════════════════
+  12. SERVICE AREAS (neighborhood pills)
+═══════════════════════════════════════════════════════════════════
+
+Find this line:
+
+   serviceAreas: [
+     "Houston","The Woodlands","Sugar Land","Katy","Pearland",
+     ...
+   ],
+
+TO ADD AN AREA: Add "City Name", anywhere in the list.
+TO REMOVE AN AREA: Delete "City Name", from the list.
+
+Make sure every item except the last one has a comma after it.
+
+═══════════════════════════════════════════════════════════════════
+  13. SOCIAL MEDIA LINKS
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   social: {
+     facebook:  "https://facebook.com/",
+     instagram: "https://instagram.com/",
+     google:    "https://google.com/",
+     nextdoor:  "https://nextdoor.com/",
+   },
+
+Replace each URL with your actual profile URL.
+If you don't use a platform, leave "" or delete its line.
+
+EXAMPLE — Your Facebook page:
+  facebook: "https://facebook.com/bigroofingusa",
+
+═══════════════════════════════════════════════════════════════════
+  14. TRUST BADGES (the strip below the hero)
+═══════════════════════════════════════════════════════════════════
+
+Find this section:
+
+   trustBadges: [
+     { icon: "shield-check", text: "Licensed & Insured" },
+     { icon: "clock",        text: "24/7 Emergency Line" },
+     { icon: "star",         text: "500+ 5-Star Reviews" },
+     { icon: "file-text",    text: "Insurance Claim Experts" },
+     { icon: "map-pin",      text: "Locally Owned" },
+   ],
+
+Change the text field on any badge.
+The icon field uses the same icon names listed in Section 5.
+
+═══════════════════════════════════════════════════════════════════
+  15. FONTS
+═══════════════════════════════════════════════════════════════════
+
+The fonts are loaded from Google Fonts. To change them:
+
+STEP 1: Go to fonts.google.com
+STEP 2: Search for and select your fonts
+STEP 3: Click "Get font" → "Get embed code"
+STEP 4: In the HTML file, find the two lines that start with:
+    <link href="https://fonts.googleapis.com/css2?family=Manrope
+STEP 5: Replace those two <link> lines with your new embed code.
+
+STEP 6: Find these lines near the top of the <style> section:
+    --font-head: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+STEP 7: Replace 'Manrope' and 'Inter' with your font names
+    (exact name as it appears on Google Fonts).
+
+RECOMMENDED FONT PAIRS FOR ROOFING:
+  - Headings: "Manrope" or "Plus Jakarta Sans" or "DM Sans"
+  - Body: "Inter" or "Source Sans 3"
+
+═══════════════════════════════════════════════════════════════════
+  16. FOOTER
+═══════════════════════════════════════════════════════════════════
+
+Find these lines:
+
+   footerTagline: "Protecting families, one roof at a time.",
+   footerLinks: [
+     { label:"Home",      href:"#home"      },
+     ...
+   ],
+
+footerTagline = The small tagline shown in the footer.
+footerLinks   = The navigation links in the footer.
+
+TO CHANGE LINKS: Edit the label (visible text) or href (URL).
+For same-page sections, href starts with # (like "#contact").
+For external pages, use the full URL: "https://google.com".
+
+═══════════════════════════════════════════════════════════════════
+  COMMON MISTAKES TO AVOID
+═══════════════════════════════════════════════════════════════════
+
+1. MISSING QUOTES: Every text value must be inside "quotes".
+   WRONG:  companyName: Big Roofing USA,
+   RIGHT:  companyName: "Big Roofing USA",
+
+2. MISSING COMMA: Each line inside { } needs a comma at the end.
+   WRONG:  phone: "(713) 456-7890"
+   RIGHT:  phone: "(713) 456-7890",
+   (Exception: the very last line before a closing } has no comma)
+
+3. BROKEN IMAGE URL: If an image doesn't show, double-check the URL.
+   Test it by pasting it directly in a browser address bar.
+
+4. APOSTROPHES IN TEXT: If your text has an apostrophe, use \'
+   EXAMPLE: "We\'re the best in Houston"
+   Or just avoid contractions: "We are the best in Houston"
+
+5. ACCIDENTALLY EDITING BELOW THE CONFIG: If the site breaks
+   completely (blank page, nothing loads), you likely edited the
+   JavaScript section. Close without saving and start again.
+
+═══════════════════════════════════════════════════════════════════
+  PUBLISHING YOUR WEBSITE
+═══════════════════════════════════════════════════════════════════
+
+OPTION A — Use Netlify (Free, easiest):
+  1. Go to netlify.com and create a free account.
+  2. Drag and drop your HTML file onto the Netlify dashboard.
+  3. Your site is live in seconds with a free URL.
+  4. You can connect a custom domain (yourbusiness.com) later.
+
+OPTION B — Traditional Web Hosting:
+  1. Buy hosting from Hostinger, SiteGround, or Bluehost.
+  2. Use their File Manager to upload big-roofing-usa.html.
+  3. Rename it to index.html on the server.
+
+OPTION C — Local preview only (for clients):
+  Just open the HTML file in a web browser — it works without
+  any server or internet connection (except for Google Fonts
+  and Unsplash images, which require internet).
+
+═══════════════════════════════════════════════════════════════════
+  QUICK REFERENCE CHEAT SHEET
+═══════════════════════════════════════════════════════════════════
+
+CHANGE PHONE:         phone: "(713) 123-4567",
+                      phoneHref: "tel:+17131234567",
+
+CHANGE EMAIL:         email: "you@yourdomain.com",
+                      emailHref: "mailto:you@yourdomain.com",
+
+CHANGE HERO IMAGE:    heroImage: "YOUR-IMAGE-URL",
+
+ADD REVIEW:           Copy a { } block in reviews: [ ] and edit.
+
+ADD FAQ:              Copy a { } block in faqs: [ ] and edit.
+
+ADD SERVICE:          Copy a { } block in services: [ ] and edit.
+
+ADD AREA:             Add "City Name", to serviceAreas: [ ].
+
+CHANGE BUTTON COLOR:  accent: "#YOUR-HEX-CODE",
+
+ADD LOGO:             logoImageUrl: "logo.png",
+
+═══════════════════════════════════════════════════════════════════
+  NEED HELP?
+═══════════════════════════════════════════════════════════════════
+
+If something breaks after editing:
+  1. Press Ctrl+Z (Windows) or Cmd+Z (Mac) to undo your changes.
+  2. Keep undoing until the site works again in the browser.
+  3. Then redo changes ONE at a time, checking after each one.
+
+If you need to start fresh: keep the original file as a backup
+before making any changes. Copy it and name the copy
+"big-roofing-usa-BACKUP.html".
+
+═══════════════════════════════════════════════════════════════════
